@@ -11,3 +11,4 @@ mkdir build
 cd build
 cmake -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD=EVM ..
 make -j$(( $(nproc) + 1 ))
+cp -r $PWD $out
