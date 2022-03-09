@@ -23,8 +23,9 @@
               # sha256 = pkgs.lib.fakeSha256;
             };
             buildInputs = with pkgs; [
-              clang # TODO: not sure we need this one?
+              #clang # TODO: not sure we need this one?
               cmake
+              gnumake
               icu
               ncurses6
               python
