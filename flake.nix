@@ -1,7 +1,7 @@
 {
   description = "EVM backend for llvm";
   inputs.nixpkgs.url = "nixpkgs/nixos-21.11";
-
+  
 
   outputs = { self, nixpkgs }:
     let
@@ -15,6 +15,7 @@
         {
           evm-llvm = pkgs.stdenv.mkDerivation {
             name = "evm-llvm";
+            TMPDIR = "${builtins.toString ./.}/tmp";
             src = pkgs.fetchFromGitHub {
               owner = "etclabscore";
               repo = "evm_llvm";
