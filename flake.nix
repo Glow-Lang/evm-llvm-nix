@@ -2,7 +2,6 @@
   description = "EVM backend for llvm";
   inputs.nixpkgs.url = "nixpkgs/nixos-21.11";
 
-
   outputs = { self, nixpkgs }:
     let
       supportedSystems = [ "x86_64-linux" "x86_64-darwin" "aarch64-linux" "aarch64-darwin" ];
@@ -29,6 +28,7 @@
               ncurses6
               python
               z3
+              ninja
             ];
             builder = ./builder.sh;
             meta = with pkgs.lib; {
