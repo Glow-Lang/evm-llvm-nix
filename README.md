@@ -1,7 +1,16 @@
 WIP Nix flake for building evm-llvm.
 
-I (@zenhack) have managed to build evm-llvm outside of nix using similar
-build steps, but haven't worked out how to convince nix not to do the
-build in /tmp, and since LLVM is enormous, and the build takes 10s of
-GiB of space, this is unworkable. Simply setting TMPDIR does not seem to
-do the trick.
+
+# Usage
+
+To build evm-llvm just run
+
+`nix build` in the evm-llvm-nix directory
+
+Since llvm is a very large build and since nix builds in TMPDIR by default, this can cause memory over-use problems in systems where /tmp is a tmpfs (like some linux distros).
+
+To solve this, run:
+`TMPDIR=/var/tmp nix build`
+
+This tells nix to build in `/var/tmp` without actually changing the TMPDIR environment variable.
+
