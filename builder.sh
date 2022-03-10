@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -eou pipefail
+set -euo pipefail
 
 . "$stdenv/setup"
 cp -r $src ./evm-llvm
